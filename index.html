@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://kit.fontawesome.com/846acebbe7.js" crossorigin="anonymous"></script>
+    <script src="scripts.js" defer></script>
+    <title>Shoppies</title>
+</head>
+<body>
+    <header>
+        <div role="banner" id="banner" class="global-header">You only get five nominations</div>
+        <div class="title-search-container">
+            <h1 class="site-title">The Shoppies</h1>
+            <form action="" id="form">
+                <h4>Movie Title</h4>
+                <input type="text" placeholder="Search..." id="input" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <main class="main">
+        <div class="selection-results-container">
+            <div id="nomination-list-container">
+                <div class="nomination-list-title-button">
+                    <h4 class="nom-list-title">Your Nomination List</h4>
+                    <form id="submit-noms-form" action="">
+                        <button class="nom-list-button" type="submit" id="submit-noms-button">Submit Nominations</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="search-results-container">
+
+            </div>
+        </div>
+        <div id="final-noms-container" class="total-nominations-container">
+            <h4 class="total-conatiner-title">Sidebar Already Nominated</h4>
+            <div id="saved-nominations"></div>
+        </div>
+    </main>
+</body>
+</html>

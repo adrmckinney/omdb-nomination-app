@@ -189,6 +189,13 @@ submitNomsButton.addEventListener('click', event => {
 //         Display saved nominations in saved container
 // ***************************************************************************
 function displaySavedNominations(data) {
+    // Ensure that all existing instances are removed before adding 
+    // a new list.
+    const existingSavedInstances = document.querySelectorAll('.saved-instances');
+    for(instance of existingSavedInstances) {
+        instance.remove();
+    }
+
     const savedNominationsContainer = document.getElementById('saved-nominations')
     console.log('display function:', data)
     for (let movie of data) {
@@ -241,7 +248,8 @@ function postNominations(title, date) {
         return res.json()
     })
     .then (data => {
-        console.log(data)
+        getNominations()
+        //displaySavedNominations({ title: title, date: date })
     })
 }
 

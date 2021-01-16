@@ -76,12 +76,18 @@ function displayResults(movie) {
         movieInstance.style.display = 'none'
         
         // counter for nomination limit
+        const instances = document.querySelector('.main-nom-container')
+        console.log('instance:', instances.children.length)
+        console.log('instance:', instances.length)
+        const counter = instances.children.length
+
         const nominationListContainer = document.getElementById('nomination-list-container')
-        const nominantionCount = nominationListContainer.children.length
-        console.log(nominantionCount)
+        // const nominantionCount = nominationListContainer.children.length
+        const nominantionCount = nominationListContainer.children
+        console.log('nomination count', nominantionCount)
         
         const banner = document.querySelector('#warning-banner')
-        if (nominantionCount > 5) {
+        if (counter > 4) {
             banner.style.display = "block"
             console.log("banner triggered", banner)
             return
@@ -96,9 +102,11 @@ function displayResults(movie) {
 //            Add/Remove selected movies into user nomination container
 // ***************************************************************************
 function addNominationCard(title, date, nominationListContainer, movieInstance) {
-    
+    const mainNomListContainer = document.querySelector('.main-nom-container')
+
     const nominationCards = document.createElement('div')
-    nominationListContainer.append(nominationCards)
+    nominationCards.classList.add('nom-cards-container')
+    mainNomListContainer.append(nominationCards)
 
     const nominationCard = document.createElement('div')
     nominationCard.classList.add('card-to-be-saved')
@@ -137,28 +145,20 @@ function addNominationCard(title, date, nominationListContainer, movieInstance) 
 
         // removeNomination(itemToRemove)
     })
-    nominationCard.append(removeButton)
-  
-    
-    
-
-    
-    
-    
+    nominationCard.append(removeButton) 
 }
 
-
-
-// collect the cards to be saved and pass them to the next stage
-    
+// *********************************************************
+    //              SUBMIT NOMINATIONS
+// *********************************************************
 
 const submitNomsButton = document.getElementById('submit-noms-form')
 submitNomsButton.addEventListener('click', event => {
     event.preventDefault()
     const cardsToBeSaved = document.querySelectorAll('.card-to-be-saved')
     for (let card of cardsToBeSaved) {
-        console.log('ctbsaved', card.children[0].innerText)
-        console.log('ctbsaved', card.children[1].innerText)
+        // console.log('ctbsaved', card.children[0].innerText)
+        // console.log('ctbsaved', card.children[1].innerText)
         const title = card.children[0].innerText
         const date = card.children[1].innerText
         postNominations(title, date)
@@ -180,6 +180,10 @@ submitNomsButton.addEventListener('click', event => {
     for (let nombutton of hideNominateButtons) {
         nombutton.style.display = 'none'
     }
+
+    document.getElementById('search-button').disabled = true
+    document.querySelector('.main-nom-container').innerHTML = ''
+    document.querySelector('#search-results-container').innerHTML = ''
     
 })
 
@@ -267,6 +271,8 @@ form.addEventListener('submit', event => {
     const searchInput = document.getElementById('input')
     let term = searchInput.value
     searchInput.value = ""
+    const movieNotFoundBanner = document.getElementById('movie-not-found-banner')
+    movieNotFoundBanner.style.display = 'none'
     console.log(term)
     searchRequest(term)
 })

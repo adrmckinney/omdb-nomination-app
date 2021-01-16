@@ -58,7 +58,7 @@ header {
 
 .title-search-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 }
 
@@ -77,7 +77,7 @@ header {
 
 .search-bar {
     display: flex;
-    margin: 20px;
+    margin: 134px 35px 0 20px;;
     padding: 20px;
 }
 

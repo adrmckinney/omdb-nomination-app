@@ -17,7 +17,7 @@ header {
     height: 100px;
 }
 
-#banner {
+#movie-not-found-banner {
     display: none;
     font-size: 16px !important;
     width: 100%;
@@ -29,8 +29,33 @@ header {
     margin: 0em auto 3em;
 }
 
+#warning-banner {
+    display: none;
+    font-size: 16px !important;
+    width: 100%;
+    position: relative;
+    background: #ba89b6;
+    color: #fff;
+    text-align: center;
+    padding: 0em 2em 1em; /* Adjust to suit */
+    margin: 0em auto 3em;
+}
+
+#thanks-banner {
+    display: none;
+    font-size: 16px !important;
+    width: 100%;
+    position: relative;
+    background: #96BF48;
+    color: #fff;
+    text-align: center;
+    padding: 0em 2em 1em; /* Adjust to suit */
+    margin: 0em auto 3em;
+}
+
 .title-search-container {
     display: flex;
+    justify-content: space-evenly;
 
 }
 
@@ -41,6 +66,16 @@ header {
     font-size: 40px;
 }
 
+.search-bar {
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+}
+
+#search-icon-bar {
+    display: flex;  
+}
+
 .form {
     margin: 20px;
     padding: 20px;
@@ -48,31 +83,43 @@ header {
 /* ^^^ end header styles ^^^ */
 
 .main {
-    background-color: #e6ccb2; 
+    background-color: #f4f1de; 
     opacity: .6;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
-    display: grid;
-    grid-template-columns: 75% 25%;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    height: 500px;
 }
 
 .selection-results-container {
-    right: 0;
-    grid-column-start: 1;
-    grid-column-end: 1;
-    display: grid;
-    grid-template-rows: 25% 75%;
+    display: flex;
+    flex-direction: column;
+    border: 2px so;
 }
 
 .movie-instance-container {
     display: flex;
+    margin: 5px;
+    flex-direction: column;
+    text-align: center;
+    background-color: #594857;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    justify-content: space-between;
+}
+
+.movie-title-font {
+    font-family: 'Limelight', cursive;
 }
 
 .nominate-button {
     display:inline-block;
     padding:0.3em 1.2em;
-    margin:0 0.3em 0.3em 0;
+    margin: 1em 0.3em 0em 0.3em;
     border-radius:2em;
     box-sizing: border-box;
     text-decoration:none;
@@ -92,10 +139,9 @@ header {
 #nomination-list-container {
     /* margin: 20px;
     padding: 20px; */
-    grid-row-start: 1;
-    grid-row-end: 1;
     border: 2px solid;
     display: flex;
+    flex-direction: column;
 }
 
 .remove-button {
@@ -120,7 +166,9 @@ header {
 
 .nomination-list-title-button {
     display: flex;
+    /* flex-direction: column; */
     justify-content: space-between;
+    /* color: #96BF48; */
 }
 
 .nom-list-title {
@@ -150,14 +198,37 @@ header {
 }
 
 #search-results-container {
-    /* margin: 20px;
-    padding: 20px; */
-    grid-row-start: 2;
-    grid-row-end: 2;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    width: auto;
+    height: 333px;
+    contain: content;
 }
 
 .total-nominations-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 400px;
+    border: 2px solid;
+    overflow-y: auto;
+}
+
+.total-conatiner-title {
+    color: #96BF48;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 20px 20px;
+}
+
+#saved-nominations {
+    background-color: ;
+}
+
+.saved-instances {
+    background-color: #96BF48;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
 }

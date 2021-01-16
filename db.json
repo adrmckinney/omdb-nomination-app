@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "nominations": [
+    {
+      "title": "Parasite",
+      "date": "(2019)",
+      "id": 1
+    },
+    {
+      "title": "Birdman or (The Unexpected Virtue of Ignorance)",
+      "date": "(2014)",
+      "id": 2
+    },
+    {
+      "title": "Argo",
+      "date": "(2012)",
+      "id": 3
+    },
+    {
+      "title": "Moonlight",
+      "date": "(2016)",
+      "id": 4
+    },
+    {
+      "title": "The King's Speech",
+      "date": "(2010)",
+      "id": 5
+    },
+    {
+      "title": "The Departed",
+      "date": "(2006)",
+      "id": 6
+    },
+    {
+      "title": "Slumdog Millionaire",
+      "date": "(2008)",
+      "id": 7
+    },
+    {
+      "title": "No Country for Old Men",
+      "date": "(2007)",
+      "id": 8
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

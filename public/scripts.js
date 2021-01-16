@@ -1,4 +1,4 @@
-const url = 'http://www.omdbapi.com/?apikey=c2f7fbf8'
+const url = 'https://www.omdbapi.com/?apikey=c2f7fbf8'
 const form = document.getElementById('form')
 
 let savedNominations = []
@@ -217,7 +217,7 @@ function displaySavedNominations(data) {
 // ***************************************************************************
 //                         API Interactions
 // ***************************************************************************
-const serverUrl = 'http://127.0.0.1:3000/nominations'
+const serverUrl = '/nominations'
 
 function getNominations() {
     fetch(serverUrl)

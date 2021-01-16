@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "live-server"
+    "start": "node scripts.js"
   },
   "devDependencies": {
     "live-server": "^1.2.1"

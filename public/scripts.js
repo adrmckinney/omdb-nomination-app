@@ -132,13 +132,13 @@ function addNominationCard(title, date, nominationListContainer, movieInstance) 
 
     removeButton.addEventListener('click', event => {
         // show movie instance again inside search results container
-        const movieInstances = document.querySelectorAll('.movie-instance-container')
+        // const movieInstances = document.querySelectorAll('.movie-instance-container')
         movieInstance.style.display = 'flex'
         
         
         // remove movie instance from nomination container
-        itemToRemove = event.target.parentElement
-        console.log(itemToRemove)
+        itemToRemove = event.target.parentElement.parentElement
+        console.log("item to remove", itemToRemove)
         itemToRemove.remove()
         const banner = document.querySelector('#warning-banner')
         banner.style.display = "none"
